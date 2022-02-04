@@ -34,6 +34,7 @@ html {
 a {
     text-decoration: none;
     color: var(--gray);
+    display: inline-block;
 }
 
 li {
@@ -49,18 +50,38 @@ body {
     height: 100vh;
 }
 
+
+/* banner */
+
+
+.banner {
+    width: calc(100% - 250px);
+    height: 5rem;
+    background-color: var(--black-tran);
+    position: fixed;
+    top: 0; 
+    right: 0;
+
+    z-index: 999;
+}
+
+
 /* sidebar */ 
 
 .sidebar {
-    min-width: 200px;
-    min-height: 100vh;
+    min-width: 250px;
+    min-height: 700px;
+    max-height: calc(100vh - 90px);
+
     background-color: black;
 
-    padding-top: 1rem;
-    padding-left: 0.8rem;
+    padding: 1.5rem 1rem;
+    /* padding-left: 0.8rem; */
     position: fixed;
 
-    overflow: hidden;
+    overflow: auto;
+
+    position: relative;
 }
 
 .sidebar .logo {
@@ -72,6 +93,8 @@ body {
     margin-top: 1rem;
 }
 
+/* nav */
+
 .sidebar nav img, 
 .sidebar .bottom img {
     width: 2rem;
@@ -79,34 +102,11 @@ body {
     fill: var(--gray);
 }
 
-.sidebar .icon-cont {
-    margin-right: 0.5rem;
-    display: inline-block;
-}
-
-.sidebar .icon {
-    width: .15rem;
-    height: 1.4rem;
-    background-color: var(--gray);
-    display: inline-block;
-}
-
-.sidebar .icon.rotate {
-    transform: rotate(0.95turn);
-}
-
-.sidebar .title {
+.sidebar .title-play {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 2rem;
-}
-
-.sidebar button {
-    background-color: transparent;
-    border: transparent;
-    color: var(--gray);
-    line-height: 4rem;
+    margin-top: 2rem;   
 }
 
 .sidebar .fas {
@@ -122,33 +122,53 @@ body {
     vertical-align: top;
 }
 
+.sidebar ul {
+    padding-bottom: 1rem;
+}
+
 .sidebar li {
     margin-top: 1rem;
 }
 
-.sidebar .bottom {
-    padding-right: 0.8rem;
-    width: 100%;
-    position: relative;
-    bottom: -100px;
+
+
+
+
+/* button playlist*/
+.sidebar button {
+    background-color: transparent;
+    border: transparent;
+    color: var(--gray);
+    line-height: 4rem;
 }
 
-.sidebar .app {
+/*profile */
+
+
+.sidebar .profile {
+    padding-right: 0.8rem;
+    padding-bottom: 1.5rem;
+    /* width: 100%; */
+    position: absolute;
+    bottom: 0;
+}
+
+.profile .download {
     border-bottom: 1px solid var(--gray);
     padding-bottom: 0.5rem;
 }
 
-.sidebar .user {
+.profile .user {
     padding-top: 0.5rem;
 
 }
 
-.sidebar .app img {
+.profile .download img {
     width: 1em;
     margin-right: 0.5rem;
 }
 
-.sidebar .user img {
+.profile .user img {
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
@@ -163,16 +183,8 @@ body {
 
 
 
-footer {
-    width: 100%;
-    height: 90px;
-    background-color: #282828;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+/* main container*/ 
 
-    z-index: 998;
-}
 
 .main-container {
     width: 100%;
@@ -184,15 +196,42 @@ footer {
     overflow-y: auto;
 }
 
-header {
-    width: calc(100% - 200px);
-    height: 5rem;
-    background-color: var(--black-tran);
-    position: fixed;
-    top: 0;
-    right: 0;
 
-    z-index: 999;
+
+
+
+
+
+
+
+
+
+/* footer */ 
+
+
+footer {
+    width: 100%;
+    height: 90px;
+    background-color: #282828;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 998;
 }
+
+.cont {
+    width: calc(100% / 4);
+    height: 100%;
+    border: 1px solid white;
+    /* flex: 1 1 auto; */
+}
+
+.cont.center {
+    flex: 1 1 auto;
+
+}
+
+
+
 
 
