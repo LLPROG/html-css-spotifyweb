@@ -7,7 +7,7 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 14px;
     color: var(--gray);
 }
@@ -56,13 +56,27 @@ body {
 
 .banner {
     width: calc(100% - 250px);
+    min-width: 500px;
     height: 5rem;
     background-color: var(--black-tran);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     position: fixed;
     top: 0; 
     right: 0;
-
     z-index: 999;
+}
+
+.banner button {
+    padding: 0.5em 1.5em;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 
@@ -177,25 +191,84 @@ body {
 }
 
 
-
-
-
-
-
-
-
 /* main container*/ 
 
-
-.main-container {
+.main-cont {
     width: 100%;
     height: 100vh;
     background-color: var(--bk-color);
     padding: 1rem;
     padding-top: 5.5rem;
+    padding-bottom: 6.8rem;
 
     overflow-y: auto;
 }
+
+.main-cont ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    /* min-width: 900px; */
+}
+
+.main-cont ul li {
+    margin: 0.5rem 0.5em;
+}
+
+.main-cont ul a {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* cards */ 
+
+.main-cont h1,
+.main-cont h2 {
+    color: white;
+}
+
+.main-cont h1 {
+    font-size: 2em;
+    margin-top: 2rem;
+
+    margin-bottom: 1rem;
+}
+
+.main-cont img {
+    width: 14rem;
+}
+
+.main-cont .cards {
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.main-cont .card {
+    width: 13rem;
+    text-align: center;
+}
+
+.main-cont h2 {
+    font-size: 1.2em;
+    margin-top: 0.8rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.main-cont h3 {
+    font-size: 1em;
+}
+
+.main-cont p {
+    margin-bottom: 1.5rem;
+}
+
+/* Popular artist */
+
+
+.main-cont .artist img {
+    border-radius: 50%;
+}
+
 
 
 
