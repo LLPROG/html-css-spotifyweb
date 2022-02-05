@@ -147,7 +147,7 @@ body {
 
 .sidebar .profile {
     padding-right: 0.8rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 3rem;
     /* width: 100%; */
     position: absolute;
     bottom: 0;
@@ -173,6 +173,7 @@ body {
     height: 1.5em;
     border-radius: 50%;
     background-color: var(--gray);
+    vertical-align: middle;
 }
 
 
@@ -219,19 +220,118 @@ footer {
     z-index: 998;
 }
 
-.cont {
+footer .cont {
     width: calc(100% / 4);
     height: 100%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     /* flex: 1 1 auto; */
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
 }
 
-.cont.center {
+/* footer left */
+
+footer .cont img {
+    height: 3rem;
+}
+
+footer .cont.center {
     flex: 1 1 auto;
+}
 
+footer .song {
+    padding-left: 1rem;
+    padding-right: 3rem;
+}
+
+footer .cont .name-top {
+    color: white;
+    font-weight: bold;
 }
 
 
+/* footer center */ 
+footer .cont.center {
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+footer .cont .player button {
+    background-color: transparent;
+    border: transparent;
+    color: white;
+}
+
+footer .cont  i {
+    margin: 0.8rem;
+}
+
+footer .far.fa-play-circle {
+    font-size: 1.5em;
+}
+
+footer .time-song {
+    line-height: 1rem;
+}
+
+footer .cont .time {
+    display: inline-block;
+    width: 350px;
+    height: 2.5px;
+    background-color: var(--gray);
+    vertical-align: middle;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    position: relative;
+}
+
+footer .cont .time:before {
+    content:'';
+    width: 100px;
+    height: 2.5px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+}
+
+
+/* footer right */
+footer .cont.right {
+    justify-content: flex-end;
+}
+
+footer .cont.right {
+    color: white;
+}
+
+footer .cont.right .time {
+    width: 100px;
+}
+
+footer .cont.right .time:before {
+    width: 20px;
+}
+
+footer .cont .time:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 100px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+footer .cont.right .time:after {
+    left: 20px;
+
+}
 
 
 
