@@ -50,7 +50,7 @@ li {
 
 
 .banner {
-    width: calc(100vw - 250px);
+    width: calc(100% - 20rem);
     height: 7rem;
     background-color: var(--black-tran);
 
@@ -75,23 +75,28 @@ li {
     text-transform: uppercase;
 }
 
+.banner button:hover {
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+
 
 /* sidebar */ 
 
 .sidebar {
-    width: 250px;
+    width: 20rem;
     min-height: 500px;
     height: calc(100vh - 80px);
 
     background-color: black;
 
-    padding: 2rem 1rem;
-    /* padding-left: 0.8rem; */
-
-    overflow: auto;
+    padding-left: 2rem;
+    padding-top: 1.5rem;
 
     position: relative;
-
+    display: inline-block;
+    flex: 0 0 auto;
+    overflow: hidden;
 }
 
 .sidebar .logo {
@@ -99,10 +104,24 @@ li {
 }
 
 .sidebar nav a {
-    display: block;
+    display: flex;
     margin-top: 1.6rem;
     overflow: hidden;
+    align-items: center;
 }
+
+.sidebar nav a:hover,
+.sidebar .playlist button:hover,
+.sidebar .playlist li:hover,
+.sidebar .profile div:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar nav a:hover img {
+    filter: brightness(0) invert(1);
+}
+
 
 /* nav */
 
@@ -111,6 +130,8 @@ li {
     width: 2rem;
     vertical-align: middle;
     fill: var(--gray);
+    margin-right: 0.4rem;
+
 }
 
 .sidebar .title-play {
@@ -120,7 +141,7 @@ li {
     margin-top: 2rem;   
 }
 
-.sidebar .fas {
+.sidebar i {
     font-size: 2.8rem;
     line-height: 4rem;
     margin-right: 0.2rem;
@@ -218,6 +239,10 @@ li {
     font-weight: bold;
 }
 
+.main-cont nav ul a:hover {
+    color: white;
+}
+
 /* cards */ 
 
 .main-cont h1,
@@ -236,15 +261,40 @@ li {
     width: 20em;
 }
 
+.main-cont .card:before {
+    content: '\f144';
+    font-family: "Font Awesome 5 free"; 
+    font-size: 6rem;
+    position: absolute; 
+    top: 26%;
+    left: 35%;
+    color: white;
+    z-index: 999;
+    opacity: 0;
+}
+
+
+.main-cont .card:hover.card:before {
+    opacity: 1;
+}
+
+.main-cont .card:hover img {
+    filter: brightness(0.5)
+}
+
+
+
 .main-cont .cards {
     gap: 1.5rem;
 }
 
 .main-cont .card {
     width: 20rem;
-
     text-align: center;
+    position: relative;
+
 }
+
 
 .main-cont h2 {
     font-size: 1.2em;
@@ -411,19 +461,24 @@ footer .cont.right .time:after {
 
 @media  screen and (max-width: 768px) {
 
-    html {
-        font-size: 8px;
-    }
+    
 
     .cards {
     flex-wrap: wrap;
 
     }
 
+    
 
 }
 
+
+
 @media  screen and (max-width: 520px) {
+        .banner {
+            width: calc(100% - 33px);
+        }
+        
 
         footer {
             font-size: 7px;
@@ -431,9 +486,11 @@ footer .cont.right .time:after {
 
         .sidebar {
             width: 33px;
-            align-items: center;
+            padding-left: 0.9rem;
+            padding-top: 1.5rem;
 
         }
+
 
         .sidebar .playlist {
             visibility: hidden;
@@ -441,17 +498,28 @@ footer .cont.right .time:after {
 
         .sidebar nav {
             position: relative;
+            width: 8rem;
         }
 
-        .sidebar a {
-            /* color: black; */
-            position: relative;
-            left: 50%;
-            transform: translate(-40%);
+        .sidebar nav a {
+            color: transparent;
+
         }
 
         .sidebar .logo {
             width: 70px;
+        }
+
+        .profile {
+            color: transparent
+        }
+
+        .profile .download {
+            border: none;
+        }
+
+        .profile .download img {
+            width: 17px;
         }
 
         
