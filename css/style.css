@@ -303,9 +303,6 @@ li {
     margin-bottom: 1rem;
 }
 
-.main-cont img {
-    width: 20em;
-}
 
 .main-cont .card:before {
     content: '\f144';
@@ -328,11 +325,17 @@ li {
 }
 
 .main-cont .cards {
-    gap: 1.5rem;
+    flex: 0 0 auto;
+    gap: 2rem; 
+
+}
+
+.main-cont .card img {
+    width: 19rem;
 }
 
 .main-cont .card {
-    width: 20rem;
+    width: 19rem;
     text-align: center;
     position: relative;
 }
@@ -626,11 +629,11 @@ footer .cont.right .bar:after {
 
     .cards {
         flex-wrap: wrap;
+        /* gap: 2rem; */
     }
 
     .card {
-        flex: 2 1 auto;
-
+        flex: 1 0 auto;
     }
 
     .main-cont h1 {
@@ -641,12 +644,18 @@ footer .cont.right .bar:after {
         text-align: center;
     }
 
+    .main-cont .card img {
+        width: 80%;
+    }
+
+    
+
 }
 
 /* max-width: 630px */
 
 
-@media  screen and (max-width: 630px) {
+@media  screen and (max-width: 600px) {
 
         /*utility*/
 
@@ -690,6 +699,20 @@ footer .cont.right .bar:after {
 
         .profile .download {
             border: none;
+        }
+        
+
+        .main-cont .card img {
+            width: 80%;
+        }
+
+        .card {
+            flex: 1 0 50%;
+    
+        }
+    
+        .main-cont h1 {
+            font-size: 2.8em;
         }
 
         
