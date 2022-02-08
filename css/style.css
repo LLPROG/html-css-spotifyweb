@@ -260,9 +260,6 @@ li {
     flex-wrap: wrap;
 }
 
-.main-cont nav ul li {
-}
-
 .main-cont nav ul a {
     padding: 0.7rem 1em;
 
@@ -318,7 +315,7 @@ li {
     top: 26%;
     left: 35%;
     color: white;
-    z-index: 999;
+    z-index: 1;
     opacity: 0;
 }
 
@@ -374,6 +371,9 @@ footer {
     bottom: 0;
     z-index: 998;
     flex: 0 2 auto;
+
+    box-shadow: 0px 0 10px rgba(40, 40, 40, 1);
+
 }
 
 footer .cont {
@@ -389,7 +389,9 @@ footer .cont {
 
 /* footer left */
 
-
+.cont.center .player {
+    position: relative;
+}
 
 footer .cont img {
     height: 3rem;
@@ -427,6 +429,49 @@ footer .cont.center i {
 
 footer .far.fa-play-circle {
     font-size: 1.5em;
+    animation-name: hidden-play;
+    animation-duration: 20s;
+    animation-iteration-count: 1;
+}
+
+@keyframes hidden-play {
+
+    0% {
+        color: transparent;
+    }
+
+    99% {
+        color: transparent;
+
+    }
+
+    
+}
+
+footer .far.fa-pause-circle {
+    position: absolute;
+    top: 29%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: transparent;
+    animation-name: hidden-pause;
+    animation-duration: 20s;
+    animation-iteration-count: 1;
+}
+
+@keyframes hidden-pause {
+    0% {
+        color: white;
+    }
+
+    99% {
+        color: white;
+
+
+    }
+
+
 }
 
 footer .time-song {
@@ -459,7 +504,7 @@ footer .cont .bar:before {
 footer .cont.center .bar:before {
     
     animation-name: time-bar;
-    animation-duration: 30s;
+    animation-duration: 20s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
 }
@@ -493,7 +538,7 @@ footer .cont .bar:after {
 footer .cont.center .bar:after {
 
     animation-name: time;
-    animation-duration: 30s;
+    animation-duration: 20s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
 }
@@ -526,7 +571,7 @@ footer .cont.right .bar {
 footer .cont.right .bar:before {
     width: 5vw; 
     animation: volume;
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: 2;
     animation-timing-function: linear;
 }
@@ -551,7 +596,7 @@ footer .cont.right .bar:after {
     left: 5vw;
     animation: volume-bar;
 
-    animation-duration: 10s;
+    animation-duration: 20s;
     animation-iteration-count: 2;
     animation-timing-function: linear;
 }
@@ -573,16 +618,32 @@ footer .cont.right .bar:after {
 }
 
 
+/* media */
+/* max-width: 840px */
 
 
-@media  screen and (max-width: 840px) {
+@media  screen and (max-width: 786px) {
 
     .cards {
-    flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 2 1 auto;
+
+    }
+
+    .main-cont h1 {
+        font-size: 2.8em;
+    }
+
+    .main-cont section {
+        text-align: center;
     }
 
 }
 
+/* max-width: 630px */
 
 
 @media  screen and (max-width: 630px) {
@@ -624,12 +685,14 @@ footer .cont.right .bar:after {
 
         .sidebar .profile {
             box-shadow: none;
-
         }
+        
 
         .profile .download {
             border: none;
         }
+
+        
         
         footer {
             font-size: 7px;
