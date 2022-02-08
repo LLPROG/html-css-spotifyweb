@@ -7,10 +7,12 @@
 }
 
 html {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     color: var(--gray);
 }
+
+
 
 /* utility */ 
 
@@ -25,12 +27,6 @@ html {
     display: flex;
 }
 
-.clearfix:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-
 a {
     text-decoration: none;
     color: var(--gray);
@@ -42,31 +38,32 @@ li {
 }
 
 
+
 /*style */ 
-
-
 
 /* banner */
 
 
 .banner {
-    width: calc(100% - 20rem);
+    width: calc(100% - 200px);
     height: 7rem;
     background-color: var(--black-tran);
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
     position: fixed;
     top: 0; 
     right: 0;
-    z-index: 999;
 
+    z-index: 999;
 }
 
 .banner button {
-    margin-right: 2rem;
-    padding: 0.5em 1.5em;
+    margin-right: 3rem;
+    padding: 0.6em 1.6em;
+
     background-color: transparent;
     border-radius: 20px;
     border: 1px solid white;
@@ -78,14 +75,15 @@ li {
 .banner button:hover {
     cursor: pointer;
     filter: brightness(0.5);
+    transform: scale(1.1);
 }
 
 
 /* sidebar */ 
 
 .sidebar {
-    width: 20rem;
-    min-height: 500px;
+    width: 200px;
+    min-height: 400px;
     height: calc(100vh - 80px);
 
     background-color: black;
@@ -93,37 +91,57 @@ li {
     padding-left: 2rem;
     padding-top: 1.5rem;
 
-    position: relative;
-    display: inline-block;
+    flex-direction: column;
     flex: 0 0 auto;
     overflow: hidden;
 }
 
-.sidebar .logo {
+.sidebar .logo-big {
     width: 10rem;
 }
 
+.sidebar .logo-small {
+    width: 20px;
+    display: none;
+}
+
+/* nav */
+
 .sidebar nav a {
-    display: flex;
     margin-top: 1.6rem;
-    overflow: hidden;
+
+    display: flex;
     align-items: center;
+
+    position: relative;
+}
+
+.sidebar nav a::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: lightgreen;
+    position: absolute;
+    top: 0;
+    left: -2rem;
+    opacity: 0;
 }
 
 .sidebar nav a:hover,
 .sidebar .playlist button:hover,
 .sidebar .playlist li:hover,
-.sidebar .profile div:hover {
+.sidebar .profile .download:hover {
     color: white;
     cursor: pointer;
+}
+
+.sidebar nav a:hover::before {
+    opacity: 1;
 }
 
 .sidebar nav a:hover img {
     filter: brightness(0) invert(1);
 }
-
-
-/* nav */
 
 .sidebar nav img, 
 .sidebar .bottom img {
@@ -134,58 +152,64 @@ li {
 
 }
 
-.sidebar .title-play {
+
+/*playlist*/
+
+.sidebar .playlist {
+    height: 100%;
+    flex: 0 1 auto;
+}
+
+.playlist .title-play {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 2rem;   
 }
 
-.sidebar i {
+.playlist  i {
     font-size: 2.8rem;
     line-height: 4rem;
     margin-right: 0.2rem;
 }
 
-.sidebar button span {
-    font-size: 3rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    vertical-align: top;
-}
-
-.sidebar ul {
-    padding-bottom: 1rem;
-    height: 220px;
-    overflow-y: auto;
-    /* border: 1px solid white;  */
-}
-
-.sidebar li {
-    margin-top: 1.5rem;
-}
-
-
-
-
-
-/* button playlist*/
-.sidebar button {
+.playlist button {
     background-color: transparent;
     border: transparent;
     color: var(--gray);
     line-height: 4rem;
 }
 
-/*profile */
+.playlist button span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    vertical-align: top;
+}
 
+.playlist ul {
+    padding-bottom: 1rem;
+    height: 220px;
+    overflow-y: auto;
+    flex: 0 1 auto;
+    /* border: 1px solid white;  */
+}
+
+.playlist li {
+    margin-top: 1.5rem;
+}
+
+
+
+/*profile */
 
 .sidebar .profile {
     padding-right: 0.8rem;
     padding-bottom: 2rem;
-    /* width: 100%; */
-    position: absolute;
-    bottom: 0;
+
+    margin-top: auto;
+
+    /* position: absolute;
+    bottom: 0; */
 }
 
 .profile .download {
@@ -193,50 +217,68 @@ li {
     padding-bottom: 0.5rem;
 }
 
-.profile .user {
-    padding-top: 0.5rem;
-
-}
-
 .profile .download img {
     width: 1em;
     margin-right: 0.5rem;
 }
 
+.profile .user {
+    padding-top: 0.5rem;
+}
+
 .profile .user img {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     background-color: var(--gray);
     vertical-align: middle;
 }
 
 
-/* main container*/ 
+/* main cont*/ 
 
 .main-cont {
     width: 100%;
     height: 100vh;
+
     background-color: var(--bk-color);
-    padding: 1rem;
-    padding-top: 8rem;
-    padding-bottom: 9rem;
+
+    padding: 8rem 1rem;
+
     overflow-y: auto;
 }
 
 .main-cont nav ul {
     justify-content: center;
     flex-wrap: wrap;
-    /* min-width: 900px; */
 }
 
 .main-cont nav ul li {
-    margin: 0.5rem 0.5em;
 }
 
 .main-cont nav ul a {
+    padding: 0.7rem 1em;
+
     text-transform: uppercase;
     font-weight: bold;
+    position: relative;
+}
+
+.main-cont nav ul a::after {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: lightgreen;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    z-index: 9999;
+    transform: translate(-50%, 0);
+    opacity: 0;
+}
+
+.main-cont nav ul a:hover::after {
+    opacity: 1;
 }
 
 .main-cont nav ul a:hover {
@@ -252,8 +294,8 @@ li {
 
 .main-cont h1 {
     font-size: 2em;
-    margin-top: 2rem;
 
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
@@ -273,7 +315,6 @@ li {
     opacity: 0;
 }
 
-
 .main-cont .card:hover.card:before {
     opacity: 1;
 }
@@ -281,8 +322,6 @@ li {
 .main-cont .card:hover img {
     filter: brightness(0.5)
 }
-
-
 
 .main-cont .cards {
     gap: 1.5rem;
@@ -292,9 +331,7 @@ li {
     width: 20rem;
     text-align: center;
     position: relative;
-
 }
-
 
 .main-cont h2 {
     font-size: 1.2em;
@@ -336,10 +373,10 @@ footer .cont {
     width: calc(100% / 4);
     height: 100%;
     /* border: 1px solid white; */
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
-    padding: 0.8rem;
+    padding: 8px;
     justify-content: stretch;
 }
 
@@ -349,10 +386,6 @@ footer .cont {
 
 footer .cont img {
     height: 3rem;
-}
-
-footer .cont.left i {
-
 }
 
 footer .cont.center {
@@ -369,8 +402,6 @@ footer .cont .name-top {
     font-weight: bold;
 }
 
-
-/* footer center */ 
 footer .cont.center {
     flex-direction: column;
     justify-content: center;
@@ -416,10 +447,9 @@ footer .cont .time:before {
     left: 0;
 }
 
-
-/* footer right */
 footer .cont.right {
     justify-content: flex-end;
+    padding-right: 2rem;
 }
 
 footer .cont.right {
@@ -453,77 +483,67 @@ footer .cont .time:after {
 
 footer .cont.right .time:after {
     left: 5vw;
-
 }
 
 
 
 
-@media  screen and (max-width: 768px) {
-
-    
+@media  screen and (max-width: 840px) {
 
     .cards {
     flex-wrap: wrap;
-
     }
-
-    
 
 }
 
 
 
-@media  screen and (max-width: 520px) {
-        .banner {
-            width: calc(100% - 33px);
-        }
-        
+@media  screen and (max-width: 630px) {
 
-        footer {
-            font-size: 7px;
-        } 
+        /*utility*/
+
+        .hidden {
+            display: none;
+        }
+
+        /* style */
+
+        .banner {
+            width: calc(100% - 50px);
+        }
 
         .sidebar {
-            width: 33px;
-            padding-left: 0.9rem;
+            width: 50px;
+            padding-left: 0rem;
             padding-top: 1.5rem;
+            align-items: center;
 
         }
 
+        .sidebar .logo-big {
+            display: none;
+        }
 
-        .sidebar .playlist {
-            visibility: hidden;
+        .sidebar .logo-small {
+            display: block;
         }
 
         .sidebar nav {
             position: relative;
-            width: 8rem;
-        }
-
-        .sidebar nav a {
-            color: transparent;
-
-        }
-
-        .sidebar .logo {
-            width: 70px;
-        }
-
-        .profile {
-            color: transparent
         }
 
         .profile .download {
             border: none;
         }
+        
+        footer {
+            font-size: 7px;
+        } 
 
-        .profile .download img {
-            width: 17px;
+        footer i {
+            font-size: 10px;
+
         }
-
-        
-        
 
     }
 
